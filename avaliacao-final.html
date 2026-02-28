@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliação Final - Escatologia</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+    font-family: Georgia, serif;
+    background:#f5f1e6;
+    margin:0;
+    padding:40px 20px 120px;
+    color:#222;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+}
+h1{text-align:center;}
+
+input[type="text"]{
+    width:100%;
+    padding:10px;
+    margin:10px 0 20px;
+    font-size:16px;
+}
+
+.questao{
+    margin-bottom:25px;
+}
+
+.alternativa{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:6px 0;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.alternativa input{
+    transform:scale(1.1);
+}
+
+button{
+    padding:12px 25px;
+    background:#1f3c88;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#162c63;
+}
+
+.result{
+    margin-top:30px;
+    font-size:20px;
+    text-align:center;
+}
+
+.trophy{font-size:60px;}
+.sad{
+    font-size:60px;
+    animation: chorar 1s infinite alternate;
+}
+
+@keyframes chorar{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(5px);}
+}
+
+.footer-bar{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:8px;
+    background:#1f3c88;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Avaliação Final – Escatologia</h1>
+
+<p><strong>Média mínima para aprovação: 7,0</strong><br>
+Questões múltipla escolha e verdadeiro/falso. Cada acerto vale 1 ponto.</p>
+
+<label>Nome Completo:</label>
+<input type="text" id="nome">
+
+<label>CPF:</label>
+<input type="text" id="cpf">
+
+<div id="quiz">
+
+<div class="questao">
+<p>1) O Juízo Final ocorre após o Milênio.</p>
+<label class="alternativa">
+  <input type="radio" name="q1" value="1">
+  Verdadeiro
+</label>
+<label class="alternativa">
+  <input type="radio" name="q1" value="0">
+  Falso
+</label>
+</div>
+
+<div class="questao">
+<p>2) O Lago de Fogo foi preparado para:</p>
+<label class="alternativa">
+  <input type="radio" name="q2" value="0">
+  A humanidade
+</label>
+<label class="alternativa">
+  <input type="radio" name="q2" value="1">
+  O diabo e seus anjos
+</label>
+<label class="alternativa">
+  <input type="radio" name="q2" value="0">
+  Israel
+</label>
+</div>
+
+<div class="questao">
+<p>3) A Grande Tribulação possui foco principal em Israel.</p>
+<label class="alternativa">
+  <input type="radio" name="q3" value="1">
+  Verdadeiro
+</label>
+<label class="alternativa">
+  <input type="radio" name="q3" value="0">
+  Falso
+</label>
+</div>
+
+<div class="questao">
+<p>4) “Aiōnios” significa:</p>
+<label class="alternativa">
+  <input type="radio" name="q4" value="0">
+  Temporário
+</label>
+<label class="alternativa">
+  <input type="radio" name="q4" value="1">
+  Eterno
+</label>
+<label class="alternativa">
+  <input type="radio" name="q4" value="0">
+  Apenas histórico
+</label>
+</div>
+
+<div class="questao">
+<p>5) O arrebatamento da Igreja ocorre antes da manifestação do Anticristo.</p>
+<label class="alternativa">
+  <input type="radio" name="q5" value="1">
+  Verdadeiro
+</label>
+<label class="alternativa">
+  <input type="radio" name="q5" value="0">
+  Falso
+</label>
+</div>
+
+<div class="questao">
+<p>6) O termo hebraico para céu é:</p>
+<label class="alternativa">
+  <input type="radio" name="q6" value="1">
+  Shamayim
+</label>
+<label class="alternativa">
+  <input type="radio" name="q6" value="0">
+  Eretz
+</label>
+<label class="alternativa">
+  <input type="radio" name="q6" value="0">
+  Sheol
+</label>
+</div>
+
+<div class="questao">
+<p>7) O Livro da Vida contém os salvos.</p>
+<label class="alternativa">
+  <input type="radio" name="q7" value="1">
+  Verdadeiro
+</label>
+<label class="alternativa">
+  <input type="radio" name="q7" value="0">
+  Falso
+</label>
+</div>
+
+<div class="questao">
+<p>8) A Nova Jerusalém necessita do sol para iluminar.</p>
+<label class="alternativa">
+  <input type="radio" name="q8" value="0">
+  Verdadeiro
+</label>
+<label class="alternativa">
+  <input type="radio" name="q8" value="1">
+  Falso
+</label>
+</div>
+
+<div class="questao">
+<p>9) A Segunda Vinda de Cristo é visível e gloriosa.</p>
+<label class="alternativa">
+  <input type="radio" name="q9" value="1">
+  Verdadeiro
+</label>
+<label class="alternativa">
+  <input type="radio" name="q9" value="0">
+  Falso
+</label>
+</div>
+
+<div class="questao">
+<p>10) A expressão “Grande Trono Branco” refere-se ao:</p>
+<label class="alternativa">
+  <input type="radio" name="q10" value="0">
+  Julgamento da Igreja
+</label>
+<label class="alternativa">
+  <input type="radio" name="q10" value="1">
+  Juízo Final
+</label>
+<label class="alternativa">
+  <input type="radio" name="q10" value="0">
+  Milênio
+</label>
+</div>
+
+</div>
+
+<button type="button" onclick="corrigir()">Corrigir</button>
+
+<div class="result" id="resultado"></div>
+
+<div style="text-align:center;margin-top:20px;">
+<button id="certBtn" style="display:none;" onclick="gerarCertificado()">
+Gerar Certificado
+</button>
+</div>
+
+</div>
+
+<div class="footer-bar"></div>
+
+<script>
+function corrigir(){
+    let total=0;
+    for(let i=1;i<=10;i++){
+        let q=document.querySelector('input[name="q'+i+'"]:checked');
+        if(q) total+=parseInt(q.value);
+    }
+
+    let resultado=document.getElementById("resultado");
+
+    if(total>=7){
+        resultado.innerHTML='<div class="trophy">🏆</div> Parabéns! Você foi aprovado com '+total+'/10.';
+        document.getElementById("certBtn").style.display="inline-block";
+    }else{
+        resultado.innerHTML='<div class="sad">😭</div> Que pena! Você terá que refazer o Teste.<br>Não te desejo Sorte, pq quem estuda não precisa!<br>Nota: '+total+'/10';
+    }
+}
+
+async function gerarCertificado() {
+    const { jsPDF } = window.jspdf;
+    
+    // Configuração para Paisagem (Landscape)
+    const doc = new jsPDF({
+        orientation: 'l',
+        unit: 'mm',
+        format: 'a4'
+    });
+
+    const largura = doc.internal.pageSize.getWidth(); // 297mm
+    const altura = doc.internal.pageSize.getHeight();  // 210mm
+
+    let nome = document.getElementById("nome").value;
+    let cpf = document.getElementById("cpf").value;
+    let data = new Date().toLocaleDateString();
+
+    // Fundo colorido do certificado
+    doc.setFillColor(245, 241, 230);
+    doc.rect(0, 0, largura, altura, "F");
+
+    // Moldura lateral
+    doc.setDrawColor(31, 60, 136);
+    doc.setLineWidth(2);
+    doc.rect(10, 10, largura - 20, altura - 20);
+
+    // Título da instituição - Centralizado
+    doc.setFont("times", "bold");
+    doc.setFontSize(26);
+    doc.setTextColor(31, 60, 136);
+    doc.text("FACULDADE TEOLÓGICA AVANCE", largura / 2, 40, { align: "center" });
+
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+    doc.text("Lei nº 9.394/96 (Art. 39 §2º)", largura / 2, 50, { align: "center" });
+
+    // Título do certificado
+    doc.setFontSize(22);
+    doc.setFont("times", "bold");
+    doc.text("CERTIFICADO", largura / 2, 80, { align: "center" });
+
+    // Corpo do certificado
+    doc.setFontSize(16);
+    doc.setFont("times", "normal");
+    doc.text("Certificamos que:", 40, 110);
+
+    doc.setFont("times", "bold");
+    doc.setFontSize(18);
+    doc.text(nome, 40, 120);
+
+    doc.setFontSize(16);
+    doc.setFont("times", "normal");
+    doc.text("Concluiu com aproveitamento o Curso em ", 40, 130);
+    
+    // ESCATOLOGIA em azul e caixa alta
+    doc.setTextColor(31, 60, 136);
+    doc.setFont("times", "bold");
+    doc.text("ESCATOLOGIA.", 137, 130); // Posição ajustada após o texto anterior
+
+    doc.setTextColor(0, 0, 0);
+    doc.setFont("times", "normal");
+    doc.text("ITANHANGÁ-MT, " + data, 40, 150);
+
+    // Assinatura (Sem a linha e com margem inferior corrigida)
+    doc.setFontSize(14);
+    doc.text("Gilberto Moreira", 40, 180);
+    doc.text("Faculdade Teológica AVANCE", 40, 188);
+
+    // Dados à direita (Formado e CPF)
+    doc.setFont("times", "bold");
+    doc.text("Formado:", largura - 100, 120);
+    doc.setFont("times", "normal");
+    doc.text(nome, largura - 100, 130);
+    doc.text("CPF: " + cpf, largura - 100, 140);
+
+    // Salvar PDF
+    doc.save("certificado-escatologia.pdf");
+}
+
+</script>
+
+</body>
+</html>

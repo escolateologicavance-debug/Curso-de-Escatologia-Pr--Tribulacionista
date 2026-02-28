@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escatologia – Curso Doutrinário e Apologético</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="logo-192.png">
+
+  <!-- Splash para iOS -->
+  <link rel="apple-touch-startup-image" href="logo-512.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background-color: #ffffff;
+      color: #222;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    img {
+      width: 220px;
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #0b3d91;
+      font-size: 32px;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: #b8860b;
+      font-weight: normal;
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .instituicao {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .autor {
+      margin-bottom: 30px;
+    }
+
+    .lista {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+    }
+
+    .lista li {
+      margin-bottom: 8px;
+    }
+
+    button {
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #092c6b;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGO -->
+  <img src="logo-512.png" alt="Escatologia Logo">
+
+  <h1>ESCATOLOGIA</h1>
+  <h2>Curso Doutrinário e Apologético</h2>
+
+  <div class="instituicao">Faculdade Teológica AVANCE</div>
+  <div class="autor">Gilberto Moreira</div>
+
+  <div class="lista">
+    <ol>
+      <li>A Distinção entre Israel e a Igreja</li>
+      <li>A Importância das Dispensações</li>
+      <li>Início e Fim da Dispensação da Graça</li>
+      <li>Profecias Escatológicas na Primeira Aliança (A.T)</li>
+      <li><strong>AS 70 SEMANAS DE DANIEL</strong></li>
+      <li><strong>O ARREBATAMENTO DA IGREJA</strong> (Arrebatamento, Julgamento, Galardões, Bodas do Cordeiro)</li>
+      <li><strong>Grande Tribulação</strong> (Aviso à Israel, Selos e Trombetas, início após o Arrebatamento)</li>
+      <li>A Segunda Vinda de Cristo (Ap 19, Armagedom, Vitória sobre o Iníquo)</li>
+      <li>Julgamento de Israel e das Nações</li>
+      <li>O Reino Milenial (Promessas a Israel, Prisão de Satanás, Gogue e Magogue)</li>
+      <li>Juízo Final</li>
+      <li>Novos Céus e Nova Terra</li>
+      <li>Avaliação e Gerar Certificado</li>
+      <li>Missão Urgente da Igreja</li>
+    </ol>
+  </div>
+
+  <a href="1.html">
+    <button>INICIAR CURSO</button>
+  </a>
+
+  <footer>
+    © 2026 Escatologia – Sistema Pré-Tribulacionista
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registrado com sucesso:', registration.scope);
+        }, function(err) {
+          console.log('Falha ao registrar Service Worker:', err);
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
